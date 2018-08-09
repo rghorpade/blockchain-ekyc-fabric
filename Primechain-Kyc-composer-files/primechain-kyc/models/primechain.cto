@@ -1,0 +1,104 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Write your model definitions here
+ */
+
+namespace primechain
+
+participant SampleParticipant identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
+}
+
+asset Kyc identified by kycId {
+  o String kycId
+  o String cin
+  o String category
+  o String subCategory
+  o String description
+  o String document
+}
+
+asset KycDocument identified by kycDocId {
+  o String kycDocId
+  o String data
+}
+ 
+asset Category identified by categoryId {
+  o String categoryId
+  o String Category_1000
+  o String Category_1050
+  o String Category_1250
+  o String Category_2100
+}
+
+asset Category_1000 identified by subCategoryId {
+  o String subCategoryId
+  o String subcategory_10001010
+  o String subcategory_10001020
+  o String subcategory_10001025
+  o String subcategory_10001030
+  o String subcategory_10001035
+  o String subcategory_10001040
+  o String subcategory_10001045
+  o String subcategory_10001050
+  o String subcategory_10001060
+  o String subcategory_10001070
+  o String subcategory_10001080
+  o String subcategory_10001090
+  o String subcategory_10001100
+  o String subcategory_10001110
+  
+}
+
+asset Category_1050 identified by subCategoryId {
+  o String subCategoryId
+  o String subCategory_10501010
+  o String subCategory_10501020
+  o String subCategory_10501030
+}
+
+asset Category_1250 identified by subCategoryId {
+  o String subCategoryId
+  o String subCategory_12501010
+  o String subCategory_12501020
+  o String subCategory_12501030
+}
+
+asset Category_2100 identified by subCategoryId {
+  o String subCategoryId
+  o String subCategory_21001010
+  o String subCategory_21001020
+  o String subCategory_21001030
+  o String subCategory_21001040
+  o String subCategory_21001050
+  o String subCategory_21001060
+  o String subCategory_21001070
+  o String subCategory_21001080
+  o String subCategory_21001090
+}
+
+//transaction for changing a existing Kyc
+transaction SampleTransaction {
+  o String newValue
+}
+
+//to send the successful Transaction 
+event SampleEvent {
+  o String oldValue
+  o String newValue
+}
